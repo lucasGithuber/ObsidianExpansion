@@ -42,7 +42,7 @@ public class Categories {
     public static final ItemGroup OMC_FORGE_GROUP = new ObsidianForgeGroup(
             ObsidianExpansion.createKey("junction_category"),
             new CustomItemStack(Material.SMITHING_TABLE, BukkitComponentSerializer.legacy().serialize
-                    (ObsidianExpansion.MM.parse("<gradient:#A3A3A3:#FFFFFF>Junctions</gradient>"))),3);
+                    (ObsidianExpansion.MM.parse("<gradient:#8100D1:#D320FC>Forjas</gradient>"))),3);
     public static final ItemGroup OMC_MAIN = new MultiGroup(
             "omc_expansion",
             new CustomItemStack(Material.CRYING_OBSIDIAN, BukkitComponentSerializer.legacy().serialize
@@ -50,7 +50,7 @@ public class Categories {
             OMC_RESOURCES, OMC_ITEMS, OMC_MACHINES, OMC_GENERATORS, OMC_DROPS, OMC_FORGE_GROUP
     );
     public static final ItemGroup OMC_FORGE_CHEAT = new SubGroup("omc_forge_cheat",
-            new CustomItemStack(Material.SMITHING_TABLE, "&bForges &c- RECEITAS INCORRETAS"));
+            new CustomItemStack(Material.SMITHING_TABLE, "&bForjas &c- RECEITAS INCORRETAS"));
     public static void setup(ObsidianExpansion omc){
         OMC_FORGE_GROUP.register(omc);
         OMC_MAIN.register(omc);
