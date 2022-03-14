@@ -46,7 +46,7 @@ public class Categories {
     public static final ItemGroup OMC_MAIN = new MultiGroup(
             "omc_expansion",
             new CustomItemStack(Material.CRYING_OBSIDIAN, BukkitComponentSerializer.legacy().serialize
-                    (ObsidianExpansion.MM.parse("<gradient:#8100D1:#D320FC>&5Obsidian Expansion</gradient>"))),
+                    (ObsidianExpansion.MM.parse("<gradient:#8100D1:#D320FC>Obsidian Expansion</gradient>"))),
             OMC_RESOURCES, OMC_ITEMS, OMC_MACHINES, OMC_GENERATORS, OMC_DROPS, OMC_FORGE_GROUP
     );
     public static final ItemGroup OMC_FORGE_CHEAT = new SubGroup("omc_forge_cheat",

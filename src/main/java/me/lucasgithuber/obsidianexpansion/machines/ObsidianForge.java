@@ -60,7 +60,7 @@ public final class ObsidianForge extends io.github.mooy1.infinitylib.machines.Cr
     @Override
     protected void setup(BlockMenuPreset preset) {
         super.setup(preset);
-        preset.addItem(7, new CustomItemStack(Material.KNOWLEDGE_BOOK, ChatColor.GREEN+"Recipes"), ChestMenuUtils.getEmptyClickHandler());
+        preset.addItem(7, new CustomItemStack(Material.KNOWLEDGE_BOOK, ChatColor.GREEN+"Receitas"), ChestMenuUtils.getEmptyClickHandler());
     }
 
     @Override

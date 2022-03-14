@@ -27,11 +27,11 @@ import java.util.logging.Level;
 import static io.github.mooy1.infinitylib.core.AbstractAddon.log;
 
 
-public final class Helmet extends SlimefunArmorPiece implements ProtectiveArmor, Soulbound, NotPlaceable {
+public final class Armor extends SlimefunArmorPiece implements ProtectiveArmor, Soulbound, NotPlaceable {
 
     private static final NamespacedKey KEY = ObsidianExpansion.createKey("obsidian_Helmet");
 
-    public Helmet(ItemGroup group, SlimefunItemStack item, PotionEffect[] effects, ItemStack[] recipe, Particle[] particles) {
+    public Armor(ItemGroup group, SlimefunItemStack item, PotionEffect[] effects, ItemStack[] recipe, Particle[] particles) {
         super(group, item, ObsidianForge.TYPE, recipe, effects);
 
     }
