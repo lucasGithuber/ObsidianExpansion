@@ -1,7 +1,6 @@
 package me.lucasgithuber.obsidianexpansion;
 
 import io.github.bakedlibs.dough.items.CustomItemStack;
-
 import io.github.mooy1.infinitylib.machines.MachineLore;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
@@ -11,15 +10,15 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.Unplaceabl
 import me.lucasgithuber.obsidianexpansion.items.AngelGem;
 import me.lucasgithuber.obsidianexpansion.items.AngelGemT2;
 import me.lucasgithuber.obsidianexpansion.items.AngelGemT3;
-import me.lucasgithuber.obsidianexpansion.machines.ObsidianForge;
+import me.lucasgithuber.obsidianexpansion.items.ContainmentPick;
 import me.lucasgithuber.obsidianexpansion.machines.AdvancedObsidianGenerator;
+import me.lucasgithuber.obsidianexpansion.machines.ObsidianForge;
 import me.lucasgithuber.obsidianexpansion.machines.ObsidianReactor;
 import me.lucasgithuber.obsidianexpansion.machines.VoidObsidianGenerator;
 import me.lucasgithuber.obsidianexpansion.resources.DragonScale;
 import me.lucasgithuber.obsidianexpansion.resources.PhantomScale;
 import me.lucasgithuber.obsidianexpansion.utils.Armor;
 import me.lucasgithuber.obsidianexpansion.utils.Categories;
-
 import net.md_5.bungee.api.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Particle;
@@ -41,9 +40,15 @@ public class Items{
             "&8Usada para criar equipamentos",
             "&8 e máquinas mais avançadas",
             "",
-            "&bMáquina",
-            MachineLore.energyBuffer(40000000),
-            MachineLore.energy(10000000)+"/Craft"
+            "&bMáquina"
+    );
+    public static final SlimefunItemStack CONTAINMENT_PICK = new SlimefunItemStack(
+            "OMC_CONTAINMENT_PICK",
+            Material.NETHERITE_PICKAXE,
+            ChatColor.DARK_RED + "&lPicareta de contenção",
+            ChatColor.RED + "Usada para coletar spawners",
+            "",
+            "&8Ferramenta"
     );
     public static final SlimefunItemStack NETHERITE_GEN = new SlimefunItemStack(
             "OMC_NETHERITE_GEN",
@@ -136,6 +141,15 @@ public class Items{
             "OMC_OBSIDIAN_PLATE",
             Material.NETHERITE_INGOT,
             "&l&5Placa de obsidian",
+            "",
+            "&7Recurso"
+    );
+    public static final SlimefunItemStack CONTAINMENT_INGOT = new SlimefunItemStack(
+            "OMC_CONTAINMENT_INGOT",
+            Material.NETHERITE_INGOT,
+            "&4Barra de contenção",
+            "&aUsada para fazer",
+            "&aa picareta de contenção",
             "",
             "&7Recurso"
     );
@@ -264,6 +278,17 @@ public class Items{
             "&7Vida extra I"
     );
     public static void setup(ObsidianExpansion omc) {
+        //pick
+        new ContainmentPick(Categories.OMC_ITEMS, CONTAINMENT_PICK, RecipeType.ANCIENT_ALTAR, new ItemStack[]{
+                CONTAINMENT_INGOT,CONTAINMENT_INGOT,CONTAINMENT_INGOT,
+                null, getItem("AV_ILLUMIUM"), null,
+                null, getItem("AV_DARKSTEEL"), null
+        }).register(omc);
+        new SlimefunItem(Categories.OMC_ITEMS, CONTAINMENT_INGOT, RecipeType.MAGIC_WORKBENCH, new ItemStack[]{
+                getItem("AV_DARKSTEEL"), SlimefunItems.EARTH_RUNE, getItem("AV_DARKSTEEL"),
+                getItem("DEMONIC_INGOT"), VOID_CORE, getItem("DEMONIC_INGOT"),
+                getItem("AV_DARKSTEEL"), SlimefunItems.EARTH_RUNE, getItem("AV_DARKSTEEL"),
+        }).register(omc);
         //maquinas
         new ObsidianReactor(Categories.OMC_GENERATORS, OBSIDIAN_REACTOR, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
                 SlimefunItems.WITHER_PROOF_OBSIDIAN, OBSIDIAN_PLATE, SlimefunItems.WITHER_PROOF_OBSIDIAN,
@@ -355,6 +380,7 @@ public class Items{
                 null, new CustomItemStack(Material.PHANTOM_SPAWN_EGG, "&aPhantom"), null,
                 null, null, null
         }).register(omc);
+
         new UnplaceableBlock(Categories.OMC_FORGE_CHEAT, ADVANCED_VOID_CORE, ObsidianForge.TYPE, new ItemStack[]{
                 SlimefunItems.WITHER_PROOF_OBSIDIAN, SlimefunItems.WITHER_PROOF_OBSIDIAN, SlimefunItems.WITHER_PROOF_OBSIDIAN, TRIPLE_COMPRESSED_OBSIDIAN, DOUBLE_COMPRESSED_OBSIDIAN, SlimefunItems.WITHER_PROOF_OBSIDIAN,
                 DOUBLE_COMPRESSED_OBSIDIAN, QUINTUPLE_COMPRESSED_OBSIDIAN, DOUBLE_COMPRESSED_OBSIDIAN, SlimefunItems.EARTH_RUNE, QUINTUPLE_COMPRESSED_OBSIDIAN, SlimefunItems.WITHER_PROOF_OBSIDIAN,

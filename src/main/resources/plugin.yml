@@ -26,3 +26,5 @@ depend:
 softdepend:
   - InfinityExpansion
   - DynaTech
+  - FoxyMachines
+  - AlchimiaVitae

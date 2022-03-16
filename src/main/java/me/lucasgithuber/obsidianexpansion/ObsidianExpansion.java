@@ -5,8 +5,8 @@ import io.github.mooy1.infinitylib.core.AbstractAddon;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import me.lucasgithuber.obsidianexpansion.utils.CustomArmorTask;
 import net.kyori.adventure.text.minimessage.MiniMessage;
-import net.kyori.adventure.text.minimessage.markdown.DiscordFlavor;
-import net.kyori.adventure.text.minimessage.transformation.TransformationType;
+import net.kyori.adventure.text.minimessage.tag.resolver.TagResolver;
+import net.kyori.adventure.text.minimessage.tag.standard.StandardTags;
 
 
 public final class ObsidianExpansion extends AbstractAddon implements SlimefunAddon {
@@ -14,12 +14,12 @@ public final class ObsidianExpansion extends AbstractAddon implements SlimefunAd
     private final ObsidianExpansion plugin = this;
 
     public static final MiniMessage MM = MiniMessage.builder()
-            .removeDefaultTransformations()
-            .transformation(TransformationType.COLOR)
-            .transformation(TransformationType.DECORATION)
-            .transformation(TransformationType.GRADIENT)
-            .markdown()
-            .markdownFlavor(DiscordFlavor.get())
+            .tags(TagResolver.builder()
+                    .resolver(StandardTags.color())
+                    .resolver(StandardTags.decorations())
+                    .resolver(StandardTags.gradient())
+                    .build()
+            )
             .build();
     public ObsidianExpansion() {
         super("lucasGithuber", "ObsidianExpansion", "master", "options.auto-update");
