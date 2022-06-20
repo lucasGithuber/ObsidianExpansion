@@ -279,7 +279,7 @@ public class Items{
     );
     public static void setup(ObsidianExpansion omc) {
         //pick
-        new ContainmentPick(Categories.OMC_ITEMS, CONTAINMENT_PICK, RecipeType.ANCIENT_ALTAR, new ItemStack[]{
+        new ContainmentPick(Categories.OMC_ITEMS, CONTAINMENT_PICK, RecipeType.MAGIC_WORKBENCH, new ItemStack[]{
                 CONTAINMENT_INGOT,CONTAINMENT_INGOT,CONTAINMENT_INGOT,
                 null, getItem("AV_ILLUMIUM"), null,
                 null, getItem("AV_DARKSTEEL"), null
@@ -311,19 +311,19 @@ public class Items{
                 new ItemStack(Material.SMOOTH_QUARTZ), new ItemStack(Material.SMOOTH_QUARTZ), new ItemStack(Material.SMOOTH_QUARTZ),
         }, 10000000).register(omc);
         //angel gem
-        new AngelGem(Categories.OMC_ITEMS, ANGEL_GEM, RecipeType.ANCIENT_ALTAR,
+        new AngelGem(Categories.OMC_ITEMS, ANGEL_GEM, RecipeType.MAGIC_WORKBENCH,
                 new ItemStack[]{
                         SlimefunItems.INFUSED_ELYTRA, getItem("ADVANCED_NETHER_STAR_REACTOR"), SlimefunItems.INFUSED_ELYTRA,
                         getItem("VEX_GEM"), VOID_CORE, getItem("VEX_GEM"),
                         PHANTOM_SCALE, getItem("VEX_GEM"), PHANTOM_SCALE
                 }).register(omc);
-        new AngelGemT2(Categories.OMC_ITEMS, ANGEL_GEM_2, RecipeType.ANCIENT_ALTAR,
+        new AngelGemT2(Categories.OMC_ITEMS, ANGEL_GEM_2, RecipeType.MAGIC_WORKBENCH,
                 new ItemStack[]{
                         new ItemStack(Material.ELYTRA), getItem("STAINLESS_STEEL_ROTOR"), new ItemStack(Material.ELYTRA),
                         getItem("VEX_GEM"), ANGEL_GEM, getItem("VEX_GEM"),
                         PHANTOM_SCALE, getItem("VEX_GEM"), PHANTOM_SCALE
                 }).register(omc);
-        new AngelGemT3(Categories.OMC_ITEMS, ANGEL_GEM_3, RecipeType.ANCIENT_ALTAR,
+        new AngelGemT3(Categories.OMC_ITEMS, ANGEL_GEM_3, RecipeType.MAGIC_WORKBENCH,
                 new ItemStack[]{
                         SlimefunItems.ELYTRA_SCALE, SlimefunItems.AIR_RUNE, SlimefunItems.ELYTRA_SCALE,
                         getItem("VEX_GEM"), ANGEL_GEM_2, getItem("VEX_GEM"),
